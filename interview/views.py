@@ -18,6 +18,22 @@ class StudentCreateView(APIView):
         except Exception as e:
             return Response({'status': 'Error', 'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+# View to create many students
+class StudentCreateManyView(APIView):
+    """
+    View to create many students
+    """
+
+    def post(self, request):
+        successes = []
+        try:
+            for student_data in request.data:
+                student_instance = Student.objects.create(id=student_data['id'],rut=student_data['rut'],name=student_data['name'])
+                successes.append(student_instance.id)
+            return Response({'status': 'Ok', 'success': successes}, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({'status': 'Error', 'message': str(e), 'success': successes}, status=status.HTTP_400_BAD_REQUEST)
+
 # View to create test
 class TestCreateView(APIView):
     """
@@ -173,3 +189,20 @@ class StudentRecommendationView(APIView):
     except Exception as e:
         return Response({'status': 'Error', 'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)
   
+# View to reset database (erase all data)
+class ResetView(APIView):
+    """
+    View to reset database (erase all data)
+    """
+
+    def delete(self, request):
+        try:
+            Answer.objects.all().delete()
+            StudentTest.objects.all().delete()
+            Student.objects.all().delete()
+            Test.objects.all().delete()
+            Question.objects.all().delete()
+            Alternative.objects.all().delete()
+            return Response({'status': 'Ok', 'message': 'Database reset successfully'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'status': 'Error', 'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)

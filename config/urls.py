@@ -16,13 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from interview.views import StudentCreateView, TestCreateView, TestAssignView, TestAnswerView, StudentRecommendationView
+from interview.views import StudentCreateView, StudentCreateManyView, TestCreateView, TestAssignView, TestAnswerView, StudentRecommendationView, ResetView
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('test', TestCreateView.as_view(), name='test-create'),
     path('student', StudentCreateView.as_view(), name='student-create'),
+    path('load-students', StudentCreateManyView.as_view(), name='load-students'),
     path('test/<int:test_id>/assign', TestAssignView.as_view(), name='test-assign'),
     path('test/<int:test_id>/answers', TestAnswerView.as_view(), name='test-answers'), # GET and POST
     path('recommendations/<int:student_id>', StudentRecommendationView.as_view(), name='student-recommendations'),
+    path('reset', ResetView.as_view(), name='reset'),
 ]
