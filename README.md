@@ -36,7 +36,7 @@ Este es una conexión simple con OpenAI, que genera recomendaciones dependiendo 
 
 Lo interesante es que se pueden agregar más detalles al prompt de manera sencilla para generar respuestas más precisas, adaptadas a las necesidades del estudiante.
 
-Se puede guardar el progreso histórico del estudiante en cierto eje, felicitarlo, darle ánimos, o sugerir conceptos más básicos.
+Se puede guardar el progreso histórico del estudiante en cierto eje, felicitarlo, darle ánimos, o sugerir conceptos más básicos, por esto también era necesario crear el modelo estudiante.
 
 ### /reset (delete)
 
