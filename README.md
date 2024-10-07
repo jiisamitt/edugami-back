@@ -12,6 +12,10 @@ El proyecto contiene todo lo pedido en el documento, pero con algunas suposicion
 
 Asumí que no importaba mucho el nombre de `tagType` o `axisType`, ya que en las semillas se menciona `axisType`, pero en los modelos se tiene `tagType`.
 
+### Despliegue
+
+La aplicación está desplegada en un servicio gratis, por lo que para hacer cualquier request se debe esperar alrededor de 30-60 segundos despues del primer request, ya que se encuentra "congelado". Una vez que funciona el primero, se puede usar con más normalidad.
+
 ### /test
 
 Para crear una prueba, asumí que el `id` viene dentro del request (para `student`, `test`, `question`, y `alternative`). En Django, generalmente no es una buena práctica (Django crea los `id` automáticamente), pero como en la semilla los incluyen, pensé que sería necesario para luego comparar.
