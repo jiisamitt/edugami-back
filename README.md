@@ -22,15 +22,15 @@ Para crear una prueba, asumí que el `id` viene dentro del request (para `studen
 
 Además, asumí que los `id` de las alternativas están incorrectos a partir de la segunda pregunta (empiezan nuevamente desde 1).
 
-### /student
+### /student (post)
 
 Creé un endpoint para manejar estudiantes, aunque no se menciona explícitamente. Creo que es necesario para darle sentido al problema.
 
-### /load-students
+### /load-students (post)
 
 Este endpoint permite crear varios estudiantes a la vez, como se requiere en la semilla proporcionada.
 
-### /recommendations
+### /recommendations/<int:student-id> (get)
 
 Este es una conexión simple con OpenAI, que genera recomendaciones dependiendo del score obtenido para cada `axis`. Si el estudiante obtiene un buen puntaje, le recomienda cosas más difíciles; si no, le sugiere ejercicios más sencillos.
 
@@ -38,7 +38,7 @@ Lo interesante es que se pueden agregar más detalles al prompt de manera sencil
 
 Se puede guardar el progreso histórico del estudiante en cierto eje, felicitarlo, darle ánimos, o sugerir conceptos más básicos.
 
-### /reset
+### /reset (delete)
 
 Este endpoint permite borrar rápidamente toda la base de datos, útil para pruebas.
 
