@@ -47,15 +47,15 @@ Este endpoint permite borrar rápidamente toda la base de datos, útil para prue
 El proyecto está desplegado, pero en caso de querer ejecutarlo localmente, se necesita tener Python 3.x como mínimo. Se recomienda crear un entorno virtual (venv) e instalar todas las dependencias dentro de él. Los pasos serían los siguientes:
 
 1. Clonar el repositorio.
-2. Se puede crear una base de datos localmente (si tienen PostgreSQL), o conectarse a la base de datos que se utiliza en el proyecto (las variables de conexión deben ir en el archivo `.env`).
+2. Se puede crear una base de datos localmente (si tienen PostgreSQL), o conectarse a la base de datos que se utiliza en el proyecto (las variables de conexión deben ir en el archivo `.env` que deberán crear también y posicionarlo al mismo nivel de `manage.py`).
 3. Posicionarse en el directorio donde está `manage.py`.
-4. (Recomendado) Crear un entorno virtual con el comando:
+4. (Opcional y fuertemente recomendado) Crear un entorno virtual con el comando:
 
    ```bash
    python -m venv venv
    ```
 
-5. (Recomendado) Activar el entorno virtual:
+5. (Opcional y fuertemente recomendado) Activar el entorno virtual:
 
    ```bash
    # En Windows
