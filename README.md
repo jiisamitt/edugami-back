@@ -6,7 +6,7 @@
 
 El proyecto contiene todo lo pedido en el documento, pero con algunas suposiciones en algunos de los requests. Se asume que no se utiliza ningún tipo de autenticación ni complejidades adicionales.
 
-## 2. Consideraciones específicas (rutas)
+## 2. Consideraciones específicas
 
 ### Modelos
 
